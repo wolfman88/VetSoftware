@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client.cs" />
     <Compile Include="ClientInformation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,7 +59,6 @@
       <DependentUpon>ClientInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="DataAccess.cs" />
-    <Compile Include="Employee.cs" />
     <Compile Include="ClientSearch.cs">
       <SubType>Form</SubType>
     </Compile>

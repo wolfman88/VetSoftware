@@ -220,13 +220,14 @@
       this.TxtClientID.Size = new System.Drawing.Size(61, 23);
       this.TxtClientID.TabIndex = 20;
       this.TxtClientID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+      this.TxtClientID.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TxtClientID_MouseDoubleClick);
       // 
       // ClientInformation
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.SystemColors.ScrollBar;
-      this.ClientSize = new System.Drawing.Size(871, 495);
+      this.ClientSize = new System.Drawing.Size(871, 236);
       this.Controls.Add(this.TxtClientID);
       this.Controls.Add(this.LblClientID);
       this.Controls.Add(this.TxtState);

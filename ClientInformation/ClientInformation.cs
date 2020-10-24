@@ -17,5 +17,30 @@ namespace ClientInformation
       InitializeComponent();
     }
 
+    private void TxtClientID_MouseDoubleClick(object sender, MouseEventArgs e)
+    {
+      ClientSearch clientSearchDialog = new ClientSearch();
+      clientSearchDialog.ShowDialog();
+      TxtClientID.Text = clientSearchDialog.ClientID;
+      SetClientValues(TxtClientID.Text);
+      
+      return;
+    }
+
+    private void SetClientValues(string clientid)
+    {
+      DataAccess dbAccess = new DataAccess();
+
+      Client client = dbAccess.GetClientByID(clientid);
+
+      TxtBxFirstName.Text = client.FirstName;
+      TxtMiddleInitial.Text = client.MiddleInitial;
+      TxtLastName.Text = client.LastName;
+      TxtStreetAddress.Text = client.StreetAddress;
+      TxtCity.Text = client.City;
+      TxtState.Text = client.State;
+      TxtPostalCode.Text = client.PostalCode;
+      TxtEmail.Text = client.EMail;
+    }
   }
 }

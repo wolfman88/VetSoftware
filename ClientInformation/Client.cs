@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ClientInformation
 {
-  class Employee
+  public class Client
   {
-    public Employee()
+    public Client()
     {
     }
 
-    public string ID { get; set; } // 0
+    public string ClientID { get; set; } // 0
     public string FirstName { get; set; } // 1
     public string MiddleInitial { get; set; } // 2
     public string LastName { get; set; } // 3
@@ -20,12 +20,20 @@ namespace ClientInformation
     public string PhoneNumber { get; set; } // 5
     public string City { get; set; } // 6 
     public string State { get; set; } // 7
-    public string ZipCode { get; set; } // 8
+    public string PostalCode { get; set; } // 8
+    public string StreetAddress { get; set; } // 9
 
-    public Employee GetEmployee(string ID)
+    public Client GetClient(string ID)
     {
-      Employee emp = new Employee();
-      return emp;
+      Client cl = new Client();
+      return cl;
+    }
+    public string FullInfo
+    {
+      get
+      {
+        return $" [{ClientID}] | { FirstName } | { LastName } | {PhoneNumber} | ({ EMail })";
+      }
     }
   }
 }
