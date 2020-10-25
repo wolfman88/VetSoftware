@@ -61,5 +61,37 @@ namespace ClientInformation
       UpdateBinding();
       return;
     }
+
+    private void MaskTxtClientPhoneNumber_TextChanged(object sender, EventArgs e)
+    {
+      DataAccess dbAccess = new DataAccess();
+
+      clientList = dbAccess.GetClientListByPhoneNumber(MaskTxtClientPhoneNumber.Text);
+      UpdateBinding();
+      return;
+    }
+
+    private void TxtClientEMail_TextChanged(object sender, EventArgs e)
+    {
+      DataAccess dbAccess = new DataAccess();
+
+      clientList = dbAccess.GetClientListByEMail(TxtClientEMail.Text);
+      UpdateBinding();
+      return;
+    }
+
+    private void txtClientAddresssSearch_TextChanged(object sender, EventArgs e)
+    {
+      DataAccess dbAccess = new DataAccess();
+
+      clientList = dbAccess.GetClientListByAddress(txtClientAddresssSearch.Text);
+      UpdateBinding();
+      return;
+    }
+
+    private void txtClientPhoneNumberSearch_TextChanged(object sender, EventArgs e)
+    {
+
+    }
   }
 }

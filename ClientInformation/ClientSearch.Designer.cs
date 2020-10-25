@@ -39,7 +39,7 @@
       this.MaskTxtClientPhoneNumber = new System.Windows.Forms.MaskedTextBox();
       this.LblClientEMail = new System.Windows.Forms.Label();
       this.TxtClientEMail = new System.Windows.Forms.TextBox();
-      this.textBox2 = new System.Windows.Forms.TextBox();
+      this.txtClientAddresssSearch = new System.Windows.Forms.TextBox();
       this.LblClientAddress = new System.Windows.Forms.Label();
       this.BtnClientSearch = new System.Windows.Forms.Button();
       this.SuspendLayout();
@@ -131,6 +131,7 @@
       this.MaskTxtClientPhoneNumber.Name = "MaskTxtClientPhoneNumber";
       this.MaskTxtClientPhoneNumber.Size = new System.Drawing.Size(117, 23);
       this.MaskTxtClientPhoneNumber.TabIndex = 8;
+      this.MaskTxtClientPhoneNumber.TextChanged += new System.EventHandler(this.MaskTxtClientPhoneNumber_TextChanged);
       // 
       // LblClientEMail
       // 
@@ -149,14 +150,16 @@
       this.TxtClientEMail.Name = "TxtClientEMail";
       this.TxtClientEMail.Size = new System.Drawing.Size(326, 23);
       this.TxtClientEMail.TabIndex = 10;
+      this.TxtClientEMail.TextChanged += new System.EventHandler(this.TxtClientEMail_TextChanged);
       // 
-      // textBox2
+      // txtClientAddresssSearch
       // 
-      this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBox2.Location = new System.Drawing.Point(89, 89);
-      this.textBox2.Name = "textBox2";
-      this.textBox2.Size = new System.Drawing.Size(326, 23);
-      this.textBox2.TabIndex = 12;
+      this.txtClientAddresssSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtClientAddresssSearch.Location = new System.Drawing.Point(89, 89);
+      this.txtClientAddresssSearch.Name = "txtClientAddresssSearch";
+      this.txtClientAddresssSearch.Size = new System.Drawing.Size(326, 23);
+      this.txtClientAddresssSearch.TabIndex = 12;
+      this.txtClientAddresssSearch.TextChanged += new System.EventHandler(this.txtClientAddresssSearch_TextChanged);
       // 
       // LblClientAddress
       // 
@@ -185,7 +188,7 @@
       this.BackColor = System.Drawing.SystemColors.ScrollBar;
       this.ClientSize = new System.Drawing.Size(800, 450);
       this.Controls.Add(this.BtnClientSearch);
-      this.Controls.Add(this.textBox2);
+      this.Controls.Add(this.txtClientAddresssSearch);
       this.Controls.Add(this.LblClientAddress);
       this.Controls.Add(this.TxtClientEMail);
       this.Controls.Add(this.LblClientEMail);
@@ -219,7 +222,7 @@
     private System.Windows.Forms.MaskedTextBox MaskTxtClientPhoneNumber;
     private System.Windows.Forms.Label LblClientEMail;
     private System.Windows.Forms.TextBox TxtClientEMail;
-    private System.Windows.Forms.TextBox textBox2;
+    private System.Windows.Forms.TextBox txtClientAddresssSearch;
     private System.Windows.Forms.Label LblClientAddress;
     private System.Windows.Forms.Button BtnClientSearch;
   }

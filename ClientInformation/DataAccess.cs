@@ -43,5 +43,29 @@ namespace ClientInformation
         return output;
       }
     }
+    public List<Client> GetClientListByPhoneNumber(string phonenumber)
+    {
+      using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
+      {
+        var output = connection.Query<Client>($"SELECT * FROM ClientTable WHERE PhoneNumber LIKE  '{ phonenumber }%'").ToList();
+        return output;
+      }
+    }
+    public List<Client> GetClientListByEMail(string email)
+    {
+      using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
+      {
+        var output = connection.Query<Client>($"SELECT * FROM ClientTable WHERE EMail LIKE  '{ email }%'").ToList();
+        return output;
+      }
+    }
+    public List<Client> GetClientListByAddress(string streetaddress)
+    {
+      using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
+      {
+        var output = connection.Query<Client>($"SELECT * FROM ClientTable WHERE StreetAddress LIKE  '{ streetaddress }%'").ToList();
+        return output;
+      }
+    }
   }
 }
