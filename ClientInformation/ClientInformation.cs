@@ -15,15 +15,18 @@ namespace ClientInformation
     public ClientInformation()
     {
       InitializeComponent();
+      TxtClientID.Select();
     }
 
     private void TxtClientID_MouseDoubleClick(object sender, MouseEventArgs e)
     {
       ClientSearch clientSearchDialog = new ClientSearch();
       clientSearchDialog.ShowDialog();
-      TxtClientID.Text = clientSearchDialog.ClientID;
-      SetClientValues(TxtClientID.Text);
-      
+      if (!string.IsNullOrEmpty(clientSearchDialog.ClientID))
+      {
+        TxtClientID.Text = clientSearchDialog.ClientID;
+        SetClientValues(TxtClientID.Text);
+      }
       return;
     }
 
@@ -42,5 +45,6 @@ namespace ClientInformation
       TxtPostalCode.Text = client.PostalCode;
       TxtEmail.Text = client.EMail;
     }
+
   }
 }

@@ -16,6 +16,7 @@ namespace ClientInformation
     public ClientSearch()
     {
       InitializeComponent();
+      TxtClientLastName.Select();
       UpdateBinding();
     }
 
@@ -26,7 +27,7 @@ namespace ClientInformation
       lstBxClientSearchResultDisplay.ValueMember = "ClientID";
     }
 
-    public void textBox1_TextChanged(object sender, EventArgs e)
+    public void TxtClientLastName_TextChanged(object sender, EventArgs e)
     {
       //Client cl = new Client();
 
@@ -49,7 +50,16 @@ namespace ClientInformation
 
     private void ClientSearch_Load(object sender, EventArgs e)
     {
+      //TxtClientLastName.Focus();
+    }
 
+    private void TxtClientFirstName_TextChanged(object sender, EventArgs e)
+    {
+      DataAccess dbAccess = new DataAccess();
+
+      clientList = dbAccess.GetClientListByFirstName(TxtClientFirstName.Text);
+      UpdateBinding();
+      return;
     }
   }
 }

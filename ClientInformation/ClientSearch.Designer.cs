@@ -92,7 +92,7 @@
       this.TxtClientLastName.Name = "TxtClientLastName";
       this.TxtClientLastName.Size = new System.Drawing.Size(326, 23);
       this.TxtClientLastName.TabIndex = 4;
-      this.TxtClientLastName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+      this.TxtClientLastName.TextChanged += new System.EventHandler(this.TxtClientLastName_TextChanged);
       // 
       // LblClientFirstName
       // 
@@ -111,6 +111,7 @@
       this.TxtClientFirstName.Name = "TxtClientFirstName";
       this.TxtClientFirstName.Size = new System.Drawing.Size(326, 23);
       this.TxtClientFirstName.TabIndex = 6;
+      this.TxtClientFirstName.TextChanged += new System.EventHandler(this.TxtClientFirstName_TextChanged);
       // 
       // label1
       // 

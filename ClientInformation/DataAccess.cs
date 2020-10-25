@@ -35,5 +35,13 @@ namespace ClientInformation
         return output;
       }
     }
+    public List<Client> GetClientListByFirstName(string firstname)
+    {
+      using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
+      {
+        var output = connection.Query<Client>($"SELECT * FROM ClientTable WHERE FirstName LIKE  '{ firstname }%'").ToList();
+        return output;
+      }
+    }
   }
 }

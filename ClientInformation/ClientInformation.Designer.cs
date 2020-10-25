@@ -35,7 +35,6 @@
       this.TxtMiddleInitial = new System.Windows.Forms.TextBox();
       this.TxtLastName = new System.Windows.Forms.TextBox();
       this.TxtStreetAddress = new System.Windows.Forms.TextBox();
-      this.TxtStreetAddressTwo = new System.Windows.Forms.TextBox();
       this.LblAddress = new System.Windows.Forms.Label();
       this.LblPostalCode = new System.Windows.Forms.Label();
       this.TxtPostalCode = new System.Windows.Forms.TextBox();
@@ -111,14 +110,6 @@
       this.TxtStreetAddress.Size = new System.Drawing.Size(499, 23);
       this.TxtStreetAddress.TabIndex = 8;
       // 
-      // TxtStreetAddressTwo
-      // 
-      this.TxtStreetAddressTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.TxtStreetAddressTwo.Location = new System.Drawing.Point(133, 131);
-      this.TxtStreetAddressTwo.Name = "TxtStreetAddressTwo";
-      this.TxtStreetAddressTwo.Size = new System.Drawing.Size(499, 23);
-      this.TxtStreetAddressTwo.TabIndex = 9;
-      // 
       // LblAddress
       // 
       this.LblAddress.AutoSize = true;
@@ -133,7 +124,7 @@
       // 
       this.LblPostalCode.AutoSize = true;
       this.LblPostalCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.LblPostalCode.Location = new System.Drawing.Point(45, 162);
+      this.LblPostalCode.Location = new System.Drawing.Point(45, 137);
       this.LblPostalCode.Name = "LblPostalCode";
       this.LblPostalCode.Size = new System.Drawing.Size(88, 17);
       this.LblPostalCode.TabIndex = 11;
@@ -142,7 +133,7 @@
       // TxtPostalCode
       // 
       this.TxtPostalCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.TxtPostalCode.Location = new System.Drawing.Point(133, 159);
+      this.TxtPostalCode.Location = new System.Drawing.Point(133, 134);
       this.TxtPostalCode.Name = "TxtPostalCode";
       this.TxtPostalCode.Size = new System.Drawing.Size(104, 23);
       this.TxtPostalCode.TabIndex = 12;
@@ -151,7 +142,7 @@
       // 
       this.LblCity.AutoSize = true;
       this.LblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.LblCity.Location = new System.Drawing.Point(306, 163);
+      this.LblCity.Location = new System.Drawing.Point(246, 137);
       this.LblCity.Name = "LblCity";
       this.LblCity.Size = new System.Drawing.Size(35, 17);
       this.LblCity.TabIndex = 13;
@@ -160,7 +151,7 @@
       // TxtCity
       // 
       this.TxtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.TxtCity.Location = new System.Drawing.Point(343, 160);
+      this.TxtCity.Location = new System.Drawing.Point(283, 134);
       this.TxtCity.Name = "TxtCity";
       this.TxtCity.Size = new System.Drawing.Size(289, 23);
       this.TxtCity.TabIndex = 14;
@@ -168,7 +159,7 @@
       // TxtEmail
       // 
       this.TxtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.TxtEmail.Location = new System.Drawing.Point(133, 188);
+      this.TxtEmail.Location = new System.Drawing.Point(133, 163);
       this.TxtEmail.Name = "TxtEmail";
       this.TxtEmail.Size = new System.Drawing.Size(273, 23);
       this.TxtEmail.TabIndex = 15;
@@ -177,7 +168,7 @@
       // 
       this.LblEmail.AutoSize = true;
       this.LblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.LblEmail.Location = new System.Drawing.Point(32, 191);
+      this.LblEmail.Location = new System.Drawing.Point(32, 166);
       this.LblEmail.Name = "LblEmail";
       this.LblEmail.Size = new System.Drawing.Size(101, 17);
       this.LblEmail.TabIndex = 16;
@@ -187,7 +178,7 @@
       // 
       this.LblState.AutoSize = true;
       this.LblState.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.LblState.Location = new System.Drawing.Point(654, 165);
+      this.LblState.Location = new System.Drawing.Point(578, 137);
       this.LblState.Name = "LblState";
       this.LblState.Size = new System.Drawing.Size(45, 17);
       this.LblState.TabIndex = 17;
@@ -196,7 +187,7 @@
       // TxtState
       // 
       this.TxtState.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.TxtState.Location = new System.Drawing.Point(696, 162);
+      this.TxtState.Location = new System.Drawing.Point(620, 134);
       this.TxtState.Name = "TxtState";
       this.TxtState.Size = new System.Drawing.Size(100, 23);
       this.TxtState.TabIndex = 18;
@@ -227,7 +218,7 @@
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.SystemColors.ScrollBar;
-      this.ClientSize = new System.Drawing.Size(871, 236);
+      this.ClientSize = new System.Drawing.Size(733, 197);
       this.Controls.Add(this.TxtClientID);
       this.Controls.Add(this.LblClientID);
       this.Controls.Add(this.TxtState);
@@ -239,7 +230,6 @@
       this.Controls.Add(this.TxtPostalCode);
       this.Controls.Add(this.LblPostalCode);
       this.Controls.Add(this.LblAddress);
-      this.Controls.Add(this.TxtStreetAddressTwo);
       this.Controls.Add(this.TxtStreetAddress);
       this.Controls.Add(this.TxtLastName);
       this.Controls.Add(this.TxtMiddleInitial);
@@ -263,7 +253,6 @@
     private System.Windows.Forms.TextBox TxtMiddleInitial;
     private System.Windows.Forms.TextBox TxtLastName;
     private System.Windows.Forms.TextBox TxtStreetAddress;
-    private System.Windows.Forms.TextBox TxtStreetAddressTwo;
     private System.Windows.Forms.Label LblAddress;
     private System.Windows.Forms.Label LblPostalCode;
     private System.Windows.Forms.TextBox TxtPostalCode;
