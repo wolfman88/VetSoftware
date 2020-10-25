@@ -131,6 +131,7 @@
       this.MaskTxtClientPhoneNumber.Name = "MaskTxtClientPhoneNumber";
       this.MaskTxtClientPhoneNumber.Size = new System.Drawing.Size(117, 23);
       this.MaskTxtClientPhoneNumber.TabIndex = 8;
+      this.MaskTxtClientPhoneNumber.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
       this.MaskTxtClientPhoneNumber.TextChanged += new System.EventHandler(this.MaskTxtClientPhoneNumber_TextChanged);
       // 
       // LblClientEMail

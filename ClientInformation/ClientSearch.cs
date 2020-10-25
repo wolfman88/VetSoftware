@@ -65,7 +65,6 @@ namespace ClientInformation
     private void MaskTxtClientPhoneNumber_TextChanged(object sender, EventArgs e)
     {
       DataAccess dbAccess = new DataAccess();
-
       clientList = dbAccess.GetClientListByPhoneNumber(MaskTxtClientPhoneNumber.Text);
       UpdateBinding();
       return;
@@ -89,9 +88,5 @@ namespace ClientInformation
       return;
     }
 
-    private void txtClientPhoneNumberSearch_TextChanged(object sender, EventArgs e)
-    {
-
-    }
   }
 }
