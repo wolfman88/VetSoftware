@@ -67,5 +67,14 @@ namespace ClientInformation
         return output;
       }
     }
+    public List<Client> UpdateClientInformation(string clientid, string firstname, string middleinitial, string lastname, string email, 
+      string phonenumber, string city, string state, string postalcode, string streetaddress)
+    {
+      using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
+      {
+        var output = connection.Query<Client>($"SELECT * FROM ClientTable WHERE StreetAddress LIKE  '{ streetaddress }%'").ToList();
+        return output;
+      }
+    }
   }
 }

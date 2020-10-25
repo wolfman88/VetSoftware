@@ -174,19 +174,21 @@
       // 
       // BtnClientSearch
       // 
+      this.BtnClientSearch.BackColor = System.Drawing.Color.Silver;
+      this.BtnClientSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
       this.BtnClientSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.BtnClientSearch.Location = new System.Drawing.Point(661, 33);
       this.BtnClientSearch.Name = "BtnClientSearch";
       this.BtnClientSearch.Size = new System.Drawing.Size(111, 31);
       this.BtnClientSearch.TabIndex = 13;
       this.BtnClientSearch.Text = "Search";
-      this.BtnClientSearch.UseVisualStyleBackColor = true;
+      this.BtnClientSearch.UseVisualStyleBackColor = false;
       // 
       // ClientSearch
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.BackColor = System.Drawing.SystemColors.ScrollBar;
+      this.BackColor = System.Drawing.Color.Gainsboro;
       this.ClientSize = new System.Drawing.Size(800, 450);
       this.Controls.Add(this.BtnClientSearch);
       this.Controls.Add(this.txtClientAddresssSearch);

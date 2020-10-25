@@ -46,5 +46,9 @@ namespace ClientInformation
       TxtEmail.Text = client.EMail;
     }
 
+    private void btnUpdateClientInfo_MouseClick(object sender, MouseEventArgs e)
+    {
+
+    }
   }
 }
