@@ -67,13 +67,22 @@ namespace ClientInformation
         return output;
       }
     }
-    public List<Client> UpdateClientInformation(string clientid, string firstname, string middleinitial, string lastname, string email, 
-      string phonenumber, string city, string state, string postalcode, string streetaddress)
+    public bool UpdateClientInformation(string clientid, string firstname, string middleinitial, string lastname, string email, 
+      string city, string state, string postalcode, string streetaddress)
     {
-      using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
+      string sql = "UPDATE ClientTable SET FirstName = @FirstName, MiddleInitial = @MiddleInitial, LastName = @LastName, " +
+        "EMail = @EMail, City = @City, State = @State, PostalCode = @PostalCode, StreetAddress = @StreetAddress WHERE ClientID = @ClientID;";
+
+      using (var connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
       {
-        var output = connection.Query<Client>($"SELECT * FROM ClientTable WHERE StreetAddress LIKE  '{ streetaddress }%'").ToList();
-        return output;
+        var affectedRows = connection.Execute(sql, new { FirstName = firstname, MiddleInitial = middleinitial, LastName = lastname, EMail = email, 
+        City = city, State = state, PostalCode = postalcode, StreetAddress = streetaddress});
+
+        Console.WriteLine(affectedRows);
+        if (affectedRows > 0)
+          return true;
+
+        return false;
       }
     }
   }

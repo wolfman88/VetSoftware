@@ -29,7 +29,7 @@ namespace ClientInformation
       }
       return;
     }
-
+    
     private void SetClientValues(string clientid)
     {
       DataAccess dbAccess = new DataAccess();
@@ -48,6 +48,10 @@ namespace ClientInformation
 
     private void btnUpdateClientInfo_MouseClick(object sender, MouseEventArgs e)
     {
+      DataAccess dbUpdate = new DataAccess();
+      dbUpdate.UpdateClientInformation(TxtClientID.Text, TxtBxFirstName.Text, TxtMiddleInitial.Text,
+        TxtLastName.Text, TxtEmail.Text, TxtCity.Text, TxtState.Text, 
+        TxtPostalCode.Text, TxtStreetAddress.Text);
 
     }
   }
