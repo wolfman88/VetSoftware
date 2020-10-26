@@ -75,8 +75,8 @@ namespace ClientInformation
 
       using (var connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
       {
-        var affectedRows = connection.Execute(sql, new { FirstName = firstname, MiddleInitial = middleinitial, LastName = lastname, EMail = email, 
-        City = city, State = state, PostalCode = postalcode, StreetAddress = streetaddress});
+        var affectedRows = connection.Execute(sql, new {ClientID = clientid, FirstName = firstname, MiddleInitial = middleinitial, LastName = lastname, 
+          EMail = email, City = city, State = state, PostalCode = postalcode, StreetAddress = streetaddress});
 
         Console.WriteLine(affectedRows);
         if (affectedRows > 0)
