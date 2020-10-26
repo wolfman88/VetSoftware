@@ -67,16 +67,16 @@ namespace ClientInformation
         return output;
       }
     }
-    public bool UpdateClientInformation(string clientid, string firstname, string middleinitial, string lastname, string email, 
+    public bool UpdateClientInformation(string clientid, string firstname, string middleinitial, string lastname, string email,
       string city, string state, string postalcode, string streetaddress)
     {
-      string sql = "UPDATE ClientTable SET FirstName = @FirstName, MiddleInitial = @MiddleInitial, LastName = @LastName, " +
-        "EMail = @EMail, City = @City, State = @State, PostalCode = @PostalCode, StreetAddress = @StreetAddress WHERE ClientID = @ClientID;";
+      string sql = $"UPDATE ClientTable SET FirstName = '{firstname}', MiddleInitial = '{middleinitial}', LastName = '{lastname}', " +
+        $"EMail = '{email}', City = '{city}', State = '{state}', PostalCode = '{postalcode}'," +
+        $"StreetAddress = '{streetaddress}' WHERE ClientID = '{clientid}'";
 
       using (var connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
       {
-        var affectedRows = connection.Execute(sql, new {ClientID = clientid, FirstName = firstname, MiddleInitial = middleinitial, LastName = lastname, 
-          EMail = email, City = city, State = state, PostalCode = postalcode, StreetAddress = streetaddress});
+        var affectedRows = connection.Execute(sql);
 
         Console.WriteLine(affectedRows);
         if (affectedRows > 0)
