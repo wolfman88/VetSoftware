@@ -212,6 +212,7 @@
       this.TxtClientID.Size = new System.Drawing.Size(61, 23);
       this.TxtClientID.TabIndex = 20;
       this.TxtClientID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+      this.TxtClientID.Leave += new System.EventHandler(this.TxtClientID_Leave);
       this.TxtClientID.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TxtClientID_MouseDoubleClick);
       // 
       // btnUpdateClientInfo

@@ -56,5 +56,20 @@ namespace ClientInformation
         TxtPostalCode.Text, TxtStreetAddress.Text);
       MessageBox.Show(result.ToString());
     }
+    private void TxtClientID_Leave(object sender, EventArgs e)
+    {
+      DataAccess dbAccess = new DataAccess();
+
+      Client client = dbAccess.GetClientByID(TxtClientID.Text);
+
+      TxtBxFirstName.Text = client.FirstName;
+      TxtMiddleInitial.Text = client.MiddleInitial;
+      TxtLastName.Text = client.LastName;
+      TxtStreetAddress.Text = client.StreetAddress;
+      TxtCity.Text = client.City;
+      TxtState.Text = client.State;
+      TxtPostalCode.Text = client.PostalCode;
+      TxtEmail.Text = client.EMail;
+    }
   }
 }
