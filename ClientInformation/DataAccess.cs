@@ -85,5 +85,43 @@ namespace ClientInformation
         return false;
       }
     }
+    public bool AddNewClient(string clientid, string firstname, string middleinitial, string lastname, string email,
+      string city, string state, string postalcode, string streetaddress)
+    {
+      string sql = $"INSERT INTO ClientTable (ClientID, FirstName, MiddleInitial, LastName, EMail, " +
+        $"StreetAddress, City, State, PostalCode) VALUES ('{clientid}', '{firstname}', '{middleinitial}', '{lastname}'," +
+          $" '{email}', '{streetaddress}', '{city}', '{state}', '{postalcode}')";
+
+      using (var connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
+      {
+        var affectedRows = connection.Execute(sql);
+
+        Console.WriteLine(affectedRows);
+        if (affectedRows > 0)
+          return true;
+
+        return false;
+      }
+    }
+    public bool DeleteClientByID(string id)
+    {
+      /*using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
+      {
+        var output = connection.Query<Client>($"DELETE FROM ClientTable WHERE ClientID =  '{ id }'").FirstOrDefault();
+        return output;
+      }*/
+      string sql = $"DELETE FROM ClientTable WHERE ClientID =  '{ id }'";
+
+      using (var connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
+      {
+        var affectedRows = connection.Execute(sql);
+
+        Console.WriteLine(affectedRows);
+        if (affectedRows > 0)
+          return true;
+
+        return false;
+      }
+    }
   }
 }

@@ -47,6 +47,9 @@
       this.LblClientID = new System.Windows.Forms.Label();
       this.TxtClientID = new System.Windows.Forms.TextBox();
       this.btnUpdateClientInfo = new System.Windows.Forms.Button();
+      this.btnAddClient = new System.Windows.Forms.Button();
+      this.btnDeleteClient = new System.Windows.Forms.Button();
+      this.btnFindClient = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
       // label1
@@ -65,7 +68,7 @@
       this.TxtBxFirstName.Location = new System.Drawing.Point(137, 58);
       this.TxtBxFirstName.Name = "TxtBxFirstName";
       this.TxtBxFirstName.Size = new System.Drawing.Size(198, 23);
-      this.TxtBxFirstName.TabIndex = 1;
+      this.TxtBxFirstName.TabIndex = 2;
       // 
       // LblMiddleInitial
       // 
@@ -93,7 +96,7 @@
       this.TxtMiddleInitial.Location = new System.Drawing.Point(337, 58);
       this.TxtMiddleInitial.Name = "TxtMiddleInitial";
       this.TxtMiddleInitial.Size = new System.Drawing.Size(22, 23);
-      this.TxtMiddleInitial.TabIndex = 4;
+      this.TxtMiddleInitial.TabIndex = 3;
       // 
       // TxtLastName
       // 
@@ -101,7 +104,7 @@
       this.TxtLastName.Location = new System.Drawing.Point(365, 58);
       this.TxtLastName.Name = "TxtLastName";
       this.TxtLastName.Size = new System.Drawing.Size(261, 23);
-      this.TxtLastName.TabIndex = 5;
+      this.TxtLastName.TabIndex = 4;
       // 
       // TxtStreetAddress
       // 
@@ -109,7 +112,7 @@
       this.TxtStreetAddress.Location = new System.Drawing.Point(127, 87);
       this.TxtStreetAddress.Name = "TxtStreetAddress";
       this.TxtStreetAddress.Size = new System.Drawing.Size(499, 23);
-      this.TxtStreetAddress.TabIndex = 8;
+      this.TxtStreetAddress.TabIndex = 5;
       // 
       // LblAddress
       // 
@@ -137,7 +140,7 @@
       this.TxtPostalCode.Location = new System.Drawing.Point(127, 119);
       this.TxtPostalCode.Name = "TxtPostalCode";
       this.TxtPostalCode.Size = new System.Drawing.Size(104, 23);
-      this.TxtPostalCode.TabIndex = 12;
+      this.TxtPostalCode.TabIndex = 6;
       // 
       // LblCity
       // 
@@ -155,7 +158,7 @@
       this.TxtCity.Location = new System.Drawing.Point(277, 119);
       this.TxtCity.Name = "TxtCity";
       this.TxtCity.Size = new System.Drawing.Size(289, 23);
-      this.TxtCity.TabIndex = 14;
+      this.TxtCity.TabIndex = 7;
       // 
       // TxtEmail
       // 
@@ -163,7 +166,7 @@
       this.TxtEmail.Location = new System.Drawing.Point(127, 148);
       this.TxtEmail.Name = "TxtEmail";
       this.TxtEmail.Size = new System.Drawing.Size(273, 23);
-      this.TxtEmail.TabIndex = 15;
+      this.TxtEmail.TabIndex = 9;
       // 
       // LblEmail
       // 
@@ -191,7 +194,7 @@
       this.TxtState.Location = new System.Drawing.Point(614, 119);
       this.TxtState.Name = "TxtState";
       this.TxtState.Size = new System.Drawing.Size(100, 23);
-      this.TxtState.TabIndex = 18;
+      this.TxtState.TabIndex = 8;
       // 
       // LblClientID
       // 
@@ -210,9 +213,8 @@
       this.TxtClientID.MaxLength = 6;
       this.TxtClientID.Name = "TxtClientID";
       this.TxtClientID.Size = new System.Drawing.Size(61, 23);
-      this.TxtClientID.TabIndex = 20;
+      this.TxtClientID.TabIndex = 1;
       this.TxtClientID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-      this.TxtClientID.Leave += new System.EventHandler(this.TxtClientID_Leave);
       this.TxtClientID.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TxtClientID_MouseDoubleClick);
       // 
       // btnUpdateClientInfo
@@ -222,13 +224,58 @@
       this.btnUpdateClientInfo.FlatAppearance.BorderSize = 2;
       this.btnUpdateClientInfo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
       this.btnUpdateClientInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnUpdateClientInfo.Location = new System.Drawing.Point(551, 151);
+      this.btnUpdateClientInfo.Location = new System.Drawing.Point(406, 148);
       this.btnUpdateClientInfo.Name = "btnUpdateClientInfo";
       this.btnUpdateClientInfo.Size = new System.Drawing.Size(87, 34);
-      this.btnUpdateClientInfo.TabIndex = 21;
+      this.btnUpdateClientInfo.TabIndex = 10;
       this.btnUpdateClientInfo.Text = "Update";
       this.btnUpdateClientInfo.UseVisualStyleBackColor = false;
       this.btnUpdateClientInfo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnUpdateClientInfo_MouseClick);
+      // 
+      // btnAddClient
+      // 
+      this.btnAddClient.BackColor = System.Drawing.Color.DarkGray;
+      this.btnAddClient.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.btnAddClient.FlatAppearance.BorderSize = 2;
+      this.btnAddClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+      this.btnAddClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnAddClient.Location = new System.Drawing.Point(499, 148);
+      this.btnAddClient.Name = "btnAddClient";
+      this.btnAddClient.Size = new System.Drawing.Size(87, 34);
+      this.btnAddClient.TabIndex = 11;
+      this.btnAddClient.Text = "Add";
+      this.btnAddClient.UseVisualStyleBackColor = false;
+      this.btnAddClient.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnAddClient_MouseClick);
+      // 
+      // btnDeleteClient
+      // 
+      this.btnDeleteClient.BackColor = System.Drawing.Color.DarkGray;
+      this.btnDeleteClient.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.btnDeleteClient.FlatAppearance.BorderSize = 2;
+      this.btnDeleteClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+      this.btnDeleteClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnDeleteClient.Location = new System.Drawing.Point(592, 148);
+      this.btnDeleteClient.Name = "btnDeleteClient";
+      this.btnDeleteClient.Size = new System.Drawing.Size(87, 34);
+      this.btnDeleteClient.TabIndex = 12;
+      this.btnDeleteClient.Text = "Delete Client";
+      this.btnDeleteClient.UseVisualStyleBackColor = false;
+      this.btnDeleteClient.Click += new System.EventHandler(this.btnDeleteClient_Click);
+      // 
+      // btnFindClient
+      // 
+      this.btnFindClient.BackColor = System.Drawing.Color.DarkGray;
+      this.btnFindClient.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.btnFindClient.FlatAppearance.BorderSize = 2;
+      this.btnFindClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+      this.btnFindClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnFindClient.Location = new System.Drawing.Point(144, 12);
+      this.btnFindClient.Name = "btnFindClient";
+      this.btnFindClient.Size = new System.Drawing.Size(87, 25);
+      this.btnFindClient.TabIndex = 20;
+      this.btnFindClient.Text = "Find";
+      this.btnFindClient.UseVisualStyleBackColor = false;
+      this.btnFindClient.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnFindClient_MouseClick);
       // 
       // ClientInformation
       // 
@@ -236,6 +283,9 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.Gainsboro;
       this.ClientSize = new System.Drawing.Size(733, 197);
+      this.Controls.Add(this.btnFindClient);
+      this.Controls.Add(this.btnDeleteClient);
+      this.Controls.Add(this.btnAddClient);
       this.Controls.Add(this.btnUpdateClientInfo);
       this.Controls.Add(this.TxtClientID);
       this.Controls.Add(this.LblClientID);
@@ -283,6 +333,9 @@
     private System.Windows.Forms.Label LblClientID;
     private System.Windows.Forms.TextBox TxtClientID;
     private System.Windows.Forms.Button btnUpdateClientInfo;
+    private System.Windows.Forms.Button btnAddClient;
+    private System.Windows.Forms.Button btnDeleteClient;
+    private System.Windows.Forms.Button btnFindClient;
   }
 }
 

@@ -56,7 +56,7 @@ namespace ClientInformation
         TxtPostalCode.Text, TxtStreetAddress.Text);
       MessageBox.Show(result.ToString());
     }
-    private void TxtClientID_Leave(object sender, EventArgs e)
+    /*private void TxtClientID_Leave(object sender, EventArgs e)
     {
       DataAccess dbAccess = new DataAccess();
 
@@ -70,6 +70,42 @@ namespace ClientInformation
       TxtState.Text = client.State;
       TxtPostalCode.Text = client.PostalCode;
       TxtEmail.Text = client.EMail;
+    }*/
+
+    private void btnAddClient_MouseClick(object sender, MouseEventArgs e)
+    {
+      DataAccess dbAdd = new DataAccess();
+      bool result = false;
+
+      result = dbAdd.AddNewClient(TxtClientID.Text, TxtBxFirstName.Text, TxtMiddleInitial.Text,
+        TxtLastName.Text, TxtEmail.Text, TxtCity.Text, TxtState.Text,
+        TxtPostalCode.Text, TxtStreetAddress.Text);
+      MessageBox.Show(result.ToString());
+    }
+
+    private void btnFindClient_MouseClick(object sender, MouseEventArgs e)
+    {
+      DataAccess dbAccess = new DataAccess();
+
+      Client client = dbAccess.GetClientByID(TxtClientID.Text);
+
+      TxtBxFirstName.Text = client.FirstName;
+      TxtMiddleInitial.Text = client.MiddleInitial;
+      TxtLastName.Text = client.LastName;
+      TxtStreetAddress.Text = client.StreetAddress;
+      TxtCity.Text = client.City;
+      TxtState.Text = client.State;
+      TxtPostalCode.Text = client.PostalCode;
+      TxtEmail.Text = client.EMail;
+    }
+
+    private void btnDeleteClient_Click(object sender, EventArgs e)
+    {
+      DataAccess dbDelete = new DataAccess();
+      bool result = false;
+
+      result = dbDelete.DeleteClientByID(TxtClientID.Text);
+      MessageBox.Show(result.ToString());
     }
   }
 }
