@@ -12,10 +12,18 @@ namespace ClientInformation
 {
   public partial class ClientInformation : Form
   {
+    List<Patient> patientList = new List<Patient>();
     public ClientInformation()
     {
       InitializeComponent();
       TxtClientID.Select();
+    }
+
+    public void UpdateBinding()
+    {
+      lstBxPatientList.DataSource = patientList;
+      lstBxPatientList.DisplayMember = "PatientDisplayInfo";
+      lstBxPatientList.ValueMember = "Patient_ID";
     }
 
     private void TxtClientID_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -28,6 +36,7 @@ namespace ClientInformation
         SetClientValues(TxtClientID.Text);
       }
       return;
+      
     }
     
     private void SetClientValues(string clientid)
@@ -44,6 +53,10 @@ namespace ClientInformation
       TxtState.Text = client.State;
       TxtPostalCode.Text = client.PostalCode;
       TxtEmail.Text = client.EMail;
+
+      /*DataAccess dbAccess = new DataAccess();*/
+      patientList = dbAccess.GetPatientListDetailsByClientID(TxtClientID.Text);
+      UpdateBinding();
     }
 
     private void btnUpdateClientInfo_MouseClick(object sender, MouseEventArgs e)
@@ -106,6 +119,11 @@ namespace ClientInformation
 
       result = dbDelete.DeleteClientByID(TxtClientID.Text);
       MessageBox.Show(result.ToString());
+    }
+
+    private void ClientInformation_Load(object sender, EventArgs e)
+    {
+
     }
   }
 }

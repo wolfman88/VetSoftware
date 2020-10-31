@@ -123,5 +123,56 @@ namespace ClientInformation
         return false;
       }
     }
+
+    public List<Patient> GetPatientListByClientID(string clientid)
+    {
+      List<Patient> patientList = new List<Patient>();
+      using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
+      {
+        var output = connection.Query<Patient>($"SELECT * FROM ClientPatientRelation WHERE ClientID LIKE  '{ clientid }%'").ToList();
+        //var patientOutput = connection.Query<Patient>($"SELECT ");
+        foreach (Patient pt in output)
+        {
+          var outputTwo = connection.Query<Patient>($"SELECT * FROM Patient WHERE Patient_ID = '{pt.Patient_ID}'").FirstOrDefault();
+          patientList.Add((Patient)outputTwo);
+        }
+        return patientList;
+      }
+    }
+    public List<Patient> GetPatientListDetailsByClientID(string clientid)
+    {
+      List<Patient> patientList = new List<Patient>();
+      using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
+      {
+        var output = connection.Query<Patient>($"SELECT * FROM ClientPatientRelation WHERE ClientID LIKE  '{ clientid }%'").ToList();
+        //var patientOutput = connection.Query<Patient>($"SELECT ");
+        foreach (Patient pt in output)
+        {
+          var outputTwo = connection.Query<Patient>($"" +
+            $"SELECT pt.Patient_ID, pt.Name, pt.Sex_ID, Sex.Sex, pt.Species_ID, sp.Species, pt.Breed_ID, br.Breed, pt.Weight " +
+            $"FROM client " +
+            $"INNER JOIN clientpatientrelation cpr ON cpr.clientid = client.clientid " +
+            $"INNER JOIN patient pt ON pt.Patient_ID = cpr.patient_id " +
+            $"INNER JOIN Sex ON Sex.Sex_ID = pt.Sex_ID " +
+            $"INNER JOIN Species sp ON Sp.Species_ID = pt.Species_ID " +
+            $"INNER JOIN Breed br ON br.Species_ID = sp.Species_ID AND br.Breed_ID = pt.Breed_ID " +
+            $"WHERE pt.Patient_ID = '{pt.Patient_ID}'").FirstOrDefault();
+          patientList.Add((Patient)outputTwo);
+        }
+        return patientList;
+      }
+    }
+    public string GetNextPatient_ID()
+    {
+      using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
+      {
+        var output = connection.ExecuteScalar($"SELECT MAX(CAST(Patient_ID AS int)) FROM Patient");
+        if (output != null)
+        {
+          return output.ToString();
+        }
+        return string.Empty;
+      }
+    }
   }
 }

@@ -39,23 +39,24 @@
       this.lblPatientBreed = new System.Windows.Forms.Label();
       this.cboBxPatientBreed = new System.Windows.Forms.ComboBox();
       this.lblPatientWeight = new System.Windows.Forms.Label();
-      this.txtPatientWeight = new System.Windows.Forms.TextBox();
       this.btnClosePatientWindow = new System.Windows.Forms.Button();
+      this.txtPatientWeight = new System.Windows.Forms.TextBox();
       this.SuspendLayout();
       // 
       // txtPatient_ID
       // 
       this.txtPatient_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtPatient_ID.Location = new System.Drawing.Point(29, 28);
+      this.txtPatient_ID.Location = new System.Drawing.Point(27, 26);
       this.txtPatient_ID.Name = "txtPatient_ID";
       this.txtPatient_ID.Size = new System.Drawing.Size(78, 23);
       this.txtPatient_ID.TabIndex = 0;
+      this.txtPatient_ID.TextChanged += new System.EventHandler(this.txtPatient_ID_TextChanged);
       // 
       // lblPatient_ID
       // 
       this.lblPatient_ID.AutoSize = true;
       this.lblPatient_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblPatient_ID.Location = new System.Drawing.Point(34, 8);
+      this.lblPatient_ID.Location = new System.Drawing.Point(30, 8);
       this.lblPatient_ID.Name = "lblPatient_ID";
       this.lblPatient_ID.Size = new System.Drawing.Size(73, 17);
       this.lblPatient_ID.TabIndex = 1;
@@ -94,6 +95,7 @@
       this.cboBxPatientSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.cboBxPatientSex.FormattingEnabled = true;
       this.cboBxPatientSex.Location = new System.Drawing.Point(82, 103);
+      this.cboBxPatientSex.MaxDropDownItems = 5;
       this.cboBxPatientSex.Name = "cboBxPatientSex";
       this.cboBxPatientSex.Size = new System.Drawing.Size(194, 24);
       this.cboBxPatientSex.TabIndex = 5;
@@ -146,14 +148,6 @@
       this.lblPatientWeight.TabIndex = 10;
       this.lblPatientWeight.Text = "Weight in Lbs:";
       // 
-      // txtPatientWeight
-      // 
-      this.txtPatientWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtPatientWeight.Location = new System.Drawing.Point(481, 74);
-      this.txtPatientWeight.Name = "txtPatientWeight";
-      this.txtPatientWeight.Size = new System.Drawing.Size(78, 23);
-      this.txtPatientWeight.TabIndex = 11;
-      // 
       // btnClosePatientWindow
       // 
       this.btnClosePatientWindow.BackColor = System.Drawing.Color.LightGray;
@@ -166,14 +160,22 @@
       this.btnClosePatientWindow.Text = "Close";
       this.btnClosePatientWindow.UseVisualStyleBackColor = false;
       // 
+      // txtPatientWeight
+      // 
+      this.txtPatientWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtPatientWeight.Location = new System.Drawing.Point(481, 74);
+      this.txtPatientWeight.Name = "txtPatientWeight";
+      this.txtPatientWeight.Size = new System.Drawing.Size(61, 23);
+      this.txtPatientWeight.TabIndex = 13;
+      // 
       // PatientInformation
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.Gainsboro;
       this.ClientSize = new System.Drawing.Size(647, 215);
-      this.Controls.Add(this.btnClosePatientWindow);
       this.Controls.Add(this.txtPatientWeight);
+      this.Controls.Add(this.btnClosePatientWindow);
       this.Controls.Add(this.lblPatientWeight);
       this.Controls.Add(this.cboBxPatientBreed);
       this.Controls.Add(this.lblPatientBreed);
@@ -206,7 +208,7 @@
     private System.Windows.Forms.Label lblPatientBreed;
     private System.Windows.Forms.ComboBox cboBxPatientBreed;
     private System.Windows.Forms.Label lblPatientWeight;
-    private System.Windows.Forms.TextBox txtPatientWeight;
     private System.Windows.Forms.Button btnClosePatientWindow;
+    private System.Windows.Forms.TextBox txtPatientWeight;
   }
 }

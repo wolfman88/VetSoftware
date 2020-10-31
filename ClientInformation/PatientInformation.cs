@@ -19,6 +19,11 @@ namespace ClientInformation
 
     private void PatientInformation_Load(object sender, EventArgs e)
     {
+      txtPatient_ID.Select();
+    }
+
+    private void txtPatient_ID_TextChanged(object sender, EventArgs e)
+    {
 
     }
   }
