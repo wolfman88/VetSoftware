@@ -166,7 +166,7 @@ namespace ClientInformation
     {
       using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
       {
-        var output = connection.ExecuteScalar($"SELECT MAX(CAST(Patient_ID AS int)) FROM Patient");
+        var output = connection.ExecuteScalar($"SELECT MAX(CAST(Patient_ID AS int))+1 FROM Patient");
         if (output != null)
         {
           return output.ToString();
