@@ -66,6 +66,12 @@
       <DependentUpon>ClientSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper.cs" />
+    <Compile Include="PatientInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientInformation.Designer.cs">
+      <DependentUpon>PatientInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ClientInformation.resx">
@@ -73,6 +79,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClientSearch.resx">
       <DependentUpon>ClientSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientInformation.resx">
+      <DependentUpon>PatientInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

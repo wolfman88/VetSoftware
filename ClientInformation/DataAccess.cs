@@ -22,7 +22,7 @@ namespace ClientInformation
     {
       using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
       {
-        var output = connection.Query<Client>($"SELECT * FROM ClientTable WHERE LastName LIKE  '{ lastName }%'").ToList();
+        var output = connection.Query<Client>($"SELECT * FROM Client WHERE LastName LIKE  '{ lastName }%'").ToList();
         return output;
       }
     }
@@ -31,7 +31,7 @@ namespace ClientInformation
     {
       using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
       {
-        var output = connection.Query<Client>($"SELECT * FROM ClientTable WHERE ClientID =  '{ id }'").FirstOrDefault();
+        var output = connection.Query<Client>($"SELECT * FROM Client WHERE ClientID =  '{ id }'").FirstOrDefault();
         return output;
       }
     }
@@ -39,7 +39,7 @@ namespace ClientInformation
     {
       using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
       {
-        var output = connection.Query<Client>($"SELECT * FROM ClientTable WHERE FirstName LIKE  '{ firstname }%'").ToList();
+        var output = connection.Query<Client>($"SELECT * FROM Client WHERE FirstName LIKE  '{ firstname }%'").ToList();
         return output;
       }
     }
@@ -47,7 +47,7 @@ namespace ClientInformation
     {
       using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
       {
-        var output = connection.Query<Client>($"SELECT * FROM ClientTable WHERE PhoneNumber LIKE  '{ phonenumber }%'").ToList();
+        var output = connection.Query<Client>($"SELECT * FROM Client WHERE PhoneNumber LIKE  '{ phonenumber }%'").ToList();
         return output;
       }
     }
@@ -55,7 +55,7 @@ namespace ClientInformation
     {
       using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
       {
-        var output = connection.Query<Client>($"SELECT * FROM ClientTable WHERE EMail LIKE  '{ email }%'").ToList();
+        var output = connection.Query<Client>($"SELECT * FROM Client WHERE EMail LIKE  '{ email }%'").ToList();
         return output;
       }
     }
@@ -63,14 +63,14 @@ namespace ClientInformation
     {
       using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
       {
-        var output = connection.Query<Client>($"SELECT * FROM ClientTable WHERE StreetAddress LIKE  '{ streetaddress }%'").ToList();
+        var output = connection.Query<Client>($"SELECT * FROM Client WHERE StreetAddress LIKE  '{ streetaddress }%'").ToList();
         return output;
       }
     }
     public bool UpdateClientInformation(string clientid, string firstname, string middleinitial, string lastname, string email,
       string city, string state, string postalcode, string streetaddress)
     {
-      string sql = $"UPDATE ClientTable SET FirstName = '{firstname}', MiddleInitial = '{middleinitial}', LastName = '{lastname}', " +
+      string sql = $"UPDATE Client SET FirstName = '{firstname}', MiddleInitial = '{middleinitial}', LastName = '{lastname}', " +
         $"EMail = '{email}', City = '{city}', State = '{state}', PostalCode = '{postalcode}'," +
         $"StreetAddress = '{streetaddress}' WHERE ClientID = '{clientid}'";
 
@@ -88,7 +88,7 @@ namespace ClientInformation
     public bool AddNewClient(string clientid, string firstname, string middleinitial, string lastname, string email,
       string city, string state, string postalcode, string streetaddress)
     {
-      string sql = $"INSERT INTO ClientTable (ClientID, FirstName, MiddleInitial, LastName, EMail, " +
+      string sql = $"INSERT INTO Client (ClientID, FirstName, MiddleInitial, LastName, EMail, " +
         $"StreetAddress, City, State, PostalCode) VALUES ('{clientid}', '{firstname}', '{middleinitial}', '{lastname}'," +
           $" '{email}', '{streetaddress}', '{city}', '{state}', '{postalcode}')";
 
@@ -107,10 +107,10 @@ namespace ClientInformation
     {
       /*using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
       {
-        var output = connection.Query<Client>($"DELETE FROM ClientTable WHERE ClientID =  '{ id }'").FirstOrDefault();
+        var output = connection.Query<Client>($"DELETE FROM Client WHERE ClientID =  '{ id }'").FirstOrDefault();
         return output;
       }*/
-      string sql = $"DELETE FROM ClientTable WHERE ClientID =  '{ id }'";
+      string sql = $"DELETE FROM Client WHERE ClientID =  '{ id }'";
 
       using (var connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
       {

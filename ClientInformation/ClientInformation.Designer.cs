@@ -50,6 +50,7 @@
       this.btnAddClient = new System.Windows.Forms.Button();
       this.btnDeleteClient = new System.Windows.Forms.Button();
       this.btnFindClient = new System.Windows.Forms.Button();
+      this.lstBxPatientList = new System.Windows.Forms.ListBox();
       this.SuspendLayout();
       // 
       // label1
@@ -224,7 +225,7 @@
       this.btnUpdateClientInfo.FlatAppearance.BorderSize = 2;
       this.btnUpdateClientInfo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
       this.btnUpdateClientInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnUpdateClientInfo.Location = new System.Drawing.Point(406, 148);
+      this.btnUpdateClientInfo.Location = new System.Drawing.Point(446, 399);
       this.btnUpdateClientInfo.Name = "btnUpdateClientInfo";
       this.btnUpdateClientInfo.Size = new System.Drawing.Size(87, 34);
       this.btnUpdateClientInfo.TabIndex = 10;
@@ -239,7 +240,7 @@
       this.btnAddClient.FlatAppearance.BorderSize = 2;
       this.btnAddClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
       this.btnAddClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnAddClient.Location = new System.Drawing.Point(499, 148);
+      this.btnAddClient.Location = new System.Drawing.Point(539, 399);
       this.btnAddClient.Name = "btnAddClient";
       this.btnAddClient.Size = new System.Drawing.Size(87, 34);
       this.btnAddClient.TabIndex = 11;
@@ -254,7 +255,7 @@
       this.btnDeleteClient.FlatAppearance.BorderSize = 2;
       this.btnDeleteClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
       this.btnDeleteClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnDeleteClient.Location = new System.Drawing.Point(592, 148);
+      this.btnDeleteClient.Location = new System.Drawing.Point(632, 399);
       this.btnDeleteClient.Name = "btnDeleteClient";
       this.btnDeleteClient.Size = new System.Drawing.Size(87, 34);
       this.btnDeleteClient.TabIndex = 12;
@@ -277,12 +278,22 @@
       this.btnFindClient.UseVisualStyleBackColor = false;
       this.btnFindClient.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnFindClient_MouseClick);
       // 
+      // lstBxPatientList
+      // 
+      this.lstBxPatientList.BackColor = System.Drawing.Color.WhiteSmoke;
+      this.lstBxPatientList.FormattingEnabled = true;
+      this.lstBxPatientList.Location = new System.Drawing.Point(12, 268);
+      this.lstBxPatientList.Name = "lstBxPatientList";
+      this.lstBxPatientList.Size = new System.Drawing.Size(709, 121);
+      this.lstBxPatientList.TabIndex = 21;
+      // 
       // ClientInformation
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.Gainsboro;
-      this.ClientSize = new System.Drawing.Size(733, 197);
+      this.ClientSize = new System.Drawing.Size(733, 445);
+      this.Controls.Add(this.lstBxPatientList);
       this.Controls.Add(this.btnFindClient);
       this.Controls.Add(this.btnDeleteClient);
       this.Controls.Add(this.btnAddClient);
@@ -336,6 +347,7 @@
     private System.Windows.Forms.Button btnAddClient;
     private System.Windows.Forms.Button btnDeleteClient;
     private System.Windows.Forms.Button btnFindClient;
+    private System.Windows.Forms.ListBox lstBxPatientList;
   }
 }
 
