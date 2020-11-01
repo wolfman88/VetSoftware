@@ -103,6 +103,22 @@ namespace ClientInformation
         return false;
       }
     }
+
+    public bool AddNewPatient(string patientid, string name, string sexid, string speciesid, string breedid)
+    {
+      string sql = $"INSERT INTO Patient (Patient_ID, Name, Sex_ID, Species_ID, Breed_ID) " +
+        $" VALUES ('{patientid}', '{name}', '{sexid}', '{speciesid}', '{breedid}')";
+      using (var connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
+      {
+        var affectedRows = connection.Execute(sql);
+
+        Console.WriteLine(affectedRows);
+        if (affectedRows > 0)
+          return true;
+
+        return false;
+      }
+    }
     public bool DeleteClientByID(string id)
     {
       /*using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))

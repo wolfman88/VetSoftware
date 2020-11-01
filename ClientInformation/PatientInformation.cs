@@ -70,5 +70,14 @@ namespace ClientInformation
 
     }
 
+    private void btnAddClient_MouseClick(object sender, MouseEventArgs e)
+    {
+      DataAccess dbAdd = new DataAccess();
+      bool result = false;
+
+      result = dbAdd.AddNewPatient(txtPatient_ID.Text, txtPatientName.Text, cboBxPatientSex.ValueMember,
+        cboBxPatientSpecies.ValueMember, cboBxPatientBreed.ValueMember);
+      MessageBox.Show(result.ToString());
+    }
   }
 }

@@ -42,12 +42,15 @@
       this.btnPatientFormCancel = new System.Windows.Forms.Button();
       this.txtPatientWeight = new System.Windows.Forms.TextBox();
       this.btnPatientFormOK = new System.Windows.Forms.Button();
+      this.btnAddClient = new System.Windows.Forms.Button();
+      this.lblClientTag = new System.Windows.Forms.Label();
+      this.lblPatientClientID = new System.Windows.Forms.Label();
       this.SuspendLayout();
       // 
       // txtPatient_ID
       // 
       this.txtPatient_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtPatient_ID.Location = new System.Drawing.Point(27, 26);
+      this.txtPatient_ID.Location = new System.Drawing.Point(11, 36);
       this.txtPatient_ID.Name = "txtPatient_ID";
       this.txtPatient_ID.Size = new System.Drawing.Size(78, 23);
       this.txtPatient_ID.TabIndex = 0;
@@ -56,7 +59,7 @@
       // 
       this.lblPatient_ID.AutoSize = true;
       this.lblPatient_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblPatient_ID.Location = new System.Drawing.Point(30, 8);
+      this.lblPatient_ID.Location = new System.Drawing.Point(14, 18);
       this.lblPatient_ID.Name = "lblPatient_ID";
       this.lblPatient_ID.Size = new System.Drawing.Size(73, 17);
       this.lblPatient_ID.TabIndex = 1;
@@ -180,12 +183,50 @@
       this.btnPatientFormOK.Text = "Ok";
       this.btnPatientFormOK.UseVisualStyleBackColor = false;
       // 
+      // btnAddClient
+      // 
+      this.btnAddClient.BackColor = System.Drawing.Color.LightGray;
+      this.btnAddClient.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.btnAddClient.FlatAppearance.BorderSize = 2;
+      this.btnAddClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+      this.btnAddClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnAddClient.Location = new System.Drawing.Point(548, 8);
+      this.btnAddClient.Name = "btnAddClient";
+      this.btnAddClient.Size = new System.Drawing.Size(87, 27);
+      this.btnAddClient.TabIndex = 15;
+      this.btnAddClient.Text = "Add";
+      this.btnAddClient.UseVisualStyleBackColor = false;
+      this.btnAddClient.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnAddClient_MouseClick);
+      // 
+      // lblClientTag
+      // 
+      this.lblClientTag.AutoSize = true;
+      this.lblClientTag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblClientTag.Location = new System.Drawing.Point(118, 8);
+      this.lblClientTag.Name = "lblClientTag";
+      this.lblClientTag.Size = new System.Drawing.Size(57, 17);
+      this.lblClientTag.TabIndex = 16;
+      this.lblClientTag.Text = "Owner: ";
+      // 
+      // lblPatientClientID
+      // 
+      this.lblPatientClientID.AutoSize = true;
+      this.lblPatientClientID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblPatientClientID.Location = new System.Drawing.Point(181, 8);
+      this.lblPatientClientID.Name = "lblPatientClientID";
+      this.lblPatientClientID.Size = new System.Drawing.Size(288, 17);
+      this.lblPatientClientID.TabIndex = 17;
+      this.lblPatientClientID.Text = "([ClientID], ClientLastName, ClientFirstName)";
+      // 
       // PatientInformation
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.Gainsboro;
       this.ClientSize = new System.Drawing.Size(647, 215);
+      this.Controls.Add(this.lblPatientClientID);
+      this.Controls.Add(this.lblClientTag);
+      this.Controls.Add(this.btnAddClient);
       this.Controls.Add(this.btnPatientFormOK);
       this.Controls.Add(this.txtPatientWeight);
       this.Controls.Add(this.btnPatientFormCancel);
@@ -224,5 +265,8 @@
     private System.Windows.Forms.Button btnPatientFormCancel;
     private System.Windows.Forms.TextBox txtPatientWeight;
     private System.Windows.Forms.Button btnPatientFormOK;
+    private System.Windows.Forms.Button btnAddClient;
+    private System.Windows.Forms.Label lblClientTag;
+    private System.Windows.Forms.Label lblPatientClientID;
   }
 }
