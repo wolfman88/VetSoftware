@@ -22,6 +22,10 @@ namespace ClientInformation
       InitializeComponent();
     }
     public string Patient_ID { get; set; }
+    public string ClientID { get; set; }
+    public string ClientLastName { get; set; }
+    public string ClientFirstName { get; set; }
+
     private List<Breed> breedValues = new List<Breed>();
     private void PatientInformation_Load(object sender, EventArgs e)
     {
@@ -36,6 +40,8 @@ namespace ClientInformation
       Patient patient = dbAccess.GetPatientByID(Patient_ID);
       if (patient != null)
       {
+        txtClientIDBinding.Text = ClientID;
+        lblPatientClientID.Text = $"({ClientLastName}, {ClientFirstName})";
         txtPatient_ID.Text = patient.Patient_ID;
         txtPatientName.Text = patient.Name;
         cboBxPatientSex.SelectedValue = patient.Sex_ID;
@@ -76,8 +82,13 @@ namespace ClientInformation
       bool result = false;
 
       result = dbAdd.AddNewPatient(txtPatient_ID.Text, txtPatientName.Text, cboBxPatientSex.ValueMember,
-        cboBxPatientSpecies.ValueMember, cboBxPatientBreed.ValueMember);
+        cboBxPatientSpecies.ValueMember, cboBxPatientBreed.ValueMember, txtClientIDBinding.Text);
       MessageBox.Show(result.ToString());
+    }
+
+    private void btnPatientFormCancel_MouseClick(object sender, MouseEventArgs e)
+    {
+      this.Close();
     }
   }
 }

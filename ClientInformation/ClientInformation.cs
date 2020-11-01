@@ -131,6 +131,9 @@ namespace ClientInformation
     {
       
       PatientInformation patientInformationDialog = new PatientInformation();
+      patientInformationDialog.ClientID = TxtClientID.Text;
+      patientInformationDialog.ClientLastName = TxtLastName.Text;
+      patientInformationDialog.ClientFirstName = TxtBxFirstName.Text;
       patientInformationDialog.Patient_ID = lstBxPatientList.SelectedValue.ToString();
       patientInformationDialog.ShowDialog();
       if (!string.IsNullOrEmpty(patientInformationDialog.Patient_ID))

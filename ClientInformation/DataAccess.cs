@@ -104,16 +104,18 @@ namespace ClientInformation
       }
     }
 
-    public bool AddNewPatient(string patientid, string name, string sexid, string speciesid, string breedid)
+    public bool AddNewPatient(string patientid, string name, string sexid, string speciesid, string breedid, string clientid)
     {
       string sql = $"INSERT INTO Patient (Patient_ID, Name, Sex_ID, Species_ID, Breed_ID) " +
         $" VALUES ('{patientid}', '{name}', '{sexid}', '{speciesid}', '{breedid}')";
+      string sqlTwo = $"INSERT INTO ClientPatientRelation VALUES ('{clientid}', '{patientid}')";
       using (var connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
       {
         var affectedRows = connection.Execute(sql);
-
+        var affectedRowsTwo = connection.Execute(sqlTwo);
         Console.WriteLine(affectedRows);
-        if (affectedRows > 0)
+        Console.WriteLine(affectedRowsTwo);
+        if (affectedRows > 0 && affectedRowsTwo > 0)
           return true;
 
         return false;
