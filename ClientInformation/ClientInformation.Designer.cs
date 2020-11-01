@@ -160,7 +160,7 @@
       this.TxtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.TxtCity.Location = new System.Drawing.Point(277, 119);
       this.TxtCity.Name = "TxtCity";
-      this.TxtCity.Size = new System.Drawing.Size(289, 23);
+      this.TxtCity.Size = new System.Drawing.Size(256, 23);
       this.TxtCity.TabIndex = 7;
       // 
       // TxtEmail
@@ -185,7 +185,7 @@
       // 
       this.LblState.AutoSize = true;
       this.LblState.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.LblState.Location = new System.Drawing.Point(572, 122);
+      this.LblState.Location = new System.Drawing.Point(539, 122);
       this.LblState.Name = "LblState";
       this.LblState.Size = new System.Drawing.Size(45, 17);
       this.LblState.TabIndex = 17;
@@ -194,9 +194,9 @@
       // TxtState
       // 
       this.TxtState.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.TxtState.Location = new System.Drawing.Point(614, 119);
+      this.TxtState.Location = new System.Drawing.Point(581, 119);
       this.TxtState.Name = "TxtState";
-      this.TxtState.Size = new System.Drawing.Size(100, 23);
+      this.TxtState.Size = new System.Drawing.Size(36, 23);
       this.TxtState.TabIndex = 8;
       // 
       // LblClientID
@@ -296,9 +296,9 @@
       this.lblPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblPhoneNumber.Location = new System.Drawing.Point(13, 186);
       this.lblPhoneNumber.Name = "lblPhoneNumber";
-      this.lblPhoneNumber.Size = new System.Drawing.Size(114, 17);
+      this.lblPhoneNumber.Size = new System.Drawing.Size(107, 17);
       this.lblPhoneNumber.TabIndex = 22;
-      this.lblPhoneNumber.Text = "Phone Numbers:";
+      this.lblPhoneNumber.Text = "Phone Number:";
       // 
       // txtMskPhoneNumber
       // 
