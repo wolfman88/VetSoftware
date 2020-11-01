@@ -87,6 +87,5 @@ namespace ClientInformation
       UpdateBinding();
       return;
     }
-
   }
 }

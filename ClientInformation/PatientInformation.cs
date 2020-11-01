@@ -15,18 +15,60 @@ namespace ClientInformation
     public PatientInformation()
     {
       InitializeComponent();
+      GetListValues();
     }
-
+    public PatientInformation(string patient_id)
+    {
+      InitializeComponent();
+    }
+    public string Patient_ID { get; set; }
+    private List<Breed> breedValues = new List<Breed>();
     private void PatientInformation_Load(object sender, EventArgs e)
     {
       txtPatient_ID.Select();
-      DataAccess dbAccess = new DataAccess();
-      string nextPatient_ID = dbAccess.GetNextPatient_ID();
-    }
+      SetPatientValues();
 
-    private void txtPatient_ID_TextChanged(object sender, EventArgs e)
+    }
+    private void SetPatientValues()
     {
+      DataAccess dbAccess = new DataAccess();
+
+      Patient patient = dbAccess.GetPatientByID(Patient_ID);
+      if (patient != null)
+      {
+        txtPatient_ID.Text = patient.Patient_ID;
+        txtPatientName.Text = patient.Name;
+        cboBxPatientSex.SelectedValue = patient.Sex_ID;
+        cboBxPatientSpecies.SelectedValue = patient.Species_ID;
+
+        List<Breed> filteredBreeds = breedValues.Where(x => x.Species_ID == patient.Species_ID).ToList();
+        cboBxPatientBreed.DataSource = filteredBreeds;
+        cboBxPatientBreed.DisplayMember = "Breed_Name";
+        cboBxPatientBreed.ValueMember = "Breed_ID";
+
+        cboBxPatientBreed.SelectedValue = patient.Breed_ID;
+      }
+    }
+    private void GetListValues()
+    {
+      DataAccess dbAccess = new DataAccess();
+      List<Species> speciesValues = dbAccess.GetPatientSpeciesValues();
+      List<Sex> sexValues = dbAccess.GetPatientSexValues();
+      breedValues = dbAccess.GetPateintBreedValues();
+
+      cboBxPatientSpecies.DataSource = speciesValues;
+      cboBxPatientSpecies.DisplayMember = "Species_Name";
+      cboBxPatientSpecies.ValueMember = "Species_ID";
+
+      cboBxPatientSex.DataSource = sexValues;
+      cboBxPatientSex.DisplayMember = "Sex_Name";
+      cboBxPatientSex.ValueMember = "Sex_ID";
+
+      cboBxPatientBreed.DataSource = breedValues;
+      cboBxPatientBreed.DisplayMember = "Breed_Name";
+      cboBxPatientBreed.ValueMember = "Breed_ID";
 
     }
+
   }
 }

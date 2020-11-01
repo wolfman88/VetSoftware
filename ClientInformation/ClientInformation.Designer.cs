@@ -51,6 +51,8 @@
       this.btnDeleteClient = new System.Windows.Forms.Button();
       this.btnFindClient = new System.Windows.Forms.Button();
       this.lstBxPatientList = new System.Windows.Forms.ListBox();
+      this.lblPhoneNumber = new System.Windows.Forms.Label();
+      this.txtMskPhoneNumber = new System.Windows.Forms.MaskedTextBox();
       this.SuspendLayout();
       // 
       // label1
@@ -228,7 +230,7 @@
       this.btnUpdateClientInfo.Location = new System.Drawing.Point(446, 399);
       this.btnUpdateClientInfo.Name = "btnUpdateClientInfo";
       this.btnUpdateClientInfo.Size = new System.Drawing.Size(87, 34);
-      this.btnUpdateClientInfo.TabIndex = 10;
+      this.btnUpdateClientInfo.TabIndex = 11;
       this.btnUpdateClientInfo.Text = "Update";
       this.btnUpdateClientInfo.UseVisualStyleBackColor = false;
       this.btnUpdateClientInfo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnUpdateClientInfo_MouseClick);
@@ -243,7 +245,7 @@
       this.btnAddClient.Location = new System.Drawing.Point(539, 399);
       this.btnAddClient.Name = "btnAddClient";
       this.btnAddClient.Size = new System.Drawing.Size(87, 34);
-      this.btnAddClient.TabIndex = 11;
+      this.btnAddClient.TabIndex = 12;
       this.btnAddClient.Text = "Add";
       this.btnAddClient.UseVisualStyleBackColor = false;
       this.btnAddClient.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnAddClient_MouseClick);
@@ -258,7 +260,7 @@
       this.btnDeleteClient.Location = new System.Drawing.Point(632, 399);
       this.btnDeleteClient.Name = "btnDeleteClient";
       this.btnDeleteClient.Size = new System.Drawing.Size(87, 34);
-      this.btnDeleteClient.TabIndex = 12;
+      this.btnDeleteClient.TabIndex = 13;
       this.btnDeleteClient.Text = "Delete Client";
       this.btnDeleteClient.UseVisualStyleBackColor = false;
       this.btnDeleteClient.Click += new System.EventHandler(this.btnDeleteClient_Click);
@@ -286,6 +288,27 @@
       this.lstBxPatientList.Name = "lstBxPatientList";
       this.lstBxPatientList.Size = new System.Drawing.Size(709, 121);
       this.lstBxPatientList.TabIndex = 21;
+      this.lstBxPatientList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstBxPatientList_MouseDoubleClick);
+      // 
+      // lblPhoneNumber
+      // 
+      this.lblPhoneNumber.AutoSize = true;
+      this.lblPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblPhoneNumber.Location = new System.Drawing.Point(13, 186);
+      this.lblPhoneNumber.Name = "lblPhoneNumber";
+      this.lblPhoneNumber.Size = new System.Drawing.Size(114, 17);
+      this.lblPhoneNumber.TabIndex = 22;
+      this.lblPhoneNumber.Text = "Phone Numbers:";
+      // 
+      // txtMskPhoneNumber
+      // 
+      this.txtMskPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtMskPhoneNumber.Location = new System.Drawing.Point(127, 183);
+      this.txtMskPhoneNumber.Mask = "(999) 000-0000";
+      this.txtMskPhoneNumber.Name = "txtMskPhoneNumber";
+      this.txtMskPhoneNumber.Size = new System.Drawing.Size(113, 23);
+      this.txtMskPhoneNumber.TabIndex = 10;
+      this.txtMskPhoneNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
       // 
       // ClientInformation
       // 
@@ -293,6 +316,8 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.Gainsboro;
       this.ClientSize = new System.Drawing.Size(733, 445);
+      this.Controls.Add(this.txtMskPhoneNumber);
+      this.Controls.Add(this.lblPhoneNumber);
       this.Controls.Add(this.lstBxPatientList);
       this.Controls.Add(this.btnFindClient);
       this.Controls.Add(this.btnDeleteClient);
@@ -349,6 +374,8 @@
     private System.Windows.Forms.Button btnDeleteClient;
     private System.Windows.Forms.Button btnFindClient;
     private System.Windows.Forms.ListBox lstBxPatientList;
+    private System.Windows.Forms.Label lblPhoneNumber;
+    private System.Windows.Forms.MaskedTextBox txtMskPhoneNumber;
   }
 }
 

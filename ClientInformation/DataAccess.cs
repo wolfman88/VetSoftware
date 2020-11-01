@@ -149,7 +149,7 @@ namespace ClientInformation
         foreach (Patient pt in output)
         {
           var outputTwo = connection.Query<Patient>($"" +
-            $"SELECT pt.Patient_ID, pt.Name, pt.Sex_ID, Sex.Sex, pt.Species_ID, sp.Species, pt.Breed_ID, br.Breed, pt.Weight " +
+            $"SELECT pt.Patient_ID, pt.Name, pt.Sex_ID, Sex.Sex_Name, pt.Species_ID, sp.Species_Name, pt.Breed_ID, br.Breed_Name, pt.Weight " +
             $"FROM client " +
             $"INNER JOIN clientpatientrelation cpr ON cpr.clientid = client.clientid " +
             $"INNER JOIN patient pt ON pt.Patient_ID = cpr.patient_id " +
@@ -172,6 +172,46 @@ namespace ClientInformation
           return output.ToString();
         }
         return string.Empty;
+      }
+    }
+    public Patient GetPatientByID(string id)
+    {
+      using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
+      {
+        var output = connection.Query<Patient>($"" +
+          $"SELECT pt.Patient_ID, pt.Name, pt.Sex_ID, Sex.Sex_Name, pt.Species_ID, sp.Species_Name, pt.Breed_ID, br.Breed_Name, pt.Weight " +
+          $"FROM Patient pt " +
+          $"INNER JOIN Sex ON Sex.Sex_ID = pt.Sex_ID " +
+          $"INNER JOIN Species sp ON Sp.Species_ID = pt.Species_ID " +
+          $"INNER JOIN Breed br ON br.Species_ID = sp.Species_ID AND br.Breed_ID = pt.Breed_ID " +
+          $"WHERE pt.Patient_ID = '{id}'").FirstOrDefault();
+
+        return output;
+      }
+    }
+
+    public List<Species> GetPatientSpeciesValues()
+    {
+      using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
+      {
+        var output = connection.Query<Species>($"SELECT * FROM Species ORDER BY Species_Name").ToList();
+        return output;
+      }
+    }
+    public List<Sex> GetPatientSexValues()
+    {
+      using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
+      {
+        var output = connection.Query<Sex>($"SELECT * FROM Sex ORDER BY Sex_Name").ToList();
+        return output;
+      }
+    }
+    public List<Breed> GetPateintBreedValues()
+    {
+      using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
+      {
+        var output = connection.Query<Breed>($"SELECT * FROM Breed ORDER BY Breed_Name").ToList();
+        return output;
       }
     }
   }

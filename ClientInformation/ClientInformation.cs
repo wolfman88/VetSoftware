@@ -53,6 +53,7 @@ namespace ClientInformation
       TxtState.Text = client.State;
       TxtPostalCode.Text = client.PostalCode;
       TxtEmail.Text = client.EMail;
+      txtMskPhoneNumber.Text = client.PhoneNumber;
 
       /*DataAccess dbAccess = new DataAccess();*/
       patientList = dbAccess.GetPatientListDetailsByClientID(TxtClientID.Text);
@@ -110,6 +111,7 @@ namespace ClientInformation
       TxtState.Text = client.State;
       TxtPostalCode.Text = client.PostalCode;
       TxtEmail.Text = client.EMail;
+      txtMskPhoneNumber.Text = client.PhoneNumber;
     }
 
     private void btnDeleteClient_Click(object sender, EventArgs e)
@@ -125,5 +127,20 @@ namespace ClientInformation
     {
 
     }
+    private void lstBxPatientList_MouseDoubleClick(object sender, MouseEventArgs e)
+    {
+      
+      PatientInformation patientInformationDialog = new PatientInformation();
+      patientInformationDialog.Patient_ID = lstBxPatientList.SelectedValue.ToString();
+      patientInformationDialog.ShowDialog();
+      if (!string.IsNullOrEmpty(patientInformationDialog.Patient_ID))
+      {
+        lstBxPatientList.Text = patientInformationDialog.Patient_ID;
+        SetClientValues(TxtClientID.Text);
+      }
+      return;
+
+    }
+    
   }
 }

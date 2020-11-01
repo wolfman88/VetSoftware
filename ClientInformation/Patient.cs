@@ -14,11 +14,11 @@ namespace ClientInformation
     public string Patient_ID { get; set; }
     public string Name { get; set; }
     public string Sex_ID { get; set; }
-    public string Sex { get; set; }
+    public string Sex_Name { get; set; }
     public string Species_ID { get; set; }
-    public string Species { get; set; }
+    public string Species_Name { get; set; }
     public string Breed_ID { get; set; }
-    public string Breed { get; set; }
+    public string Breed_Name { get; set; }
     public string Weight { get; set; }
 
     public Patient GetPatient(string P_ID)
@@ -30,7 +30,7 @@ namespace ClientInformation
     {
       get
       {
-        return $" [{Patient_ID}] | { Name } | { Sex } | { Species } |  {Breed}";
+        return $" [{Patient_ID}] | { Name } | { Sex_Name } | { Species_Name } |  {Breed_Name}";
       }
     }
   }
