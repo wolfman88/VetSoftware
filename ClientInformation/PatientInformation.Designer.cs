@@ -112,6 +112,7 @@
       this.cboBxPatientSpecies.Name = "cboBxPatientSpecies";
       this.cboBxPatientSpecies.Size = new System.Drawing.Size(288, 24);
       this.cboBxPatientSpecies.TabIndex = 6;
+      this.cboBxPatientSpecies.SelectedIndexChanged += new System.EventHandler(this.cboBxPatientSpecies_SelectedIndexChanged);
       // 
       // lblSpecies
       // 

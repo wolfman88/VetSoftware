@@ -81,14 +81,30 @@ namespace ClientInformation
       DataAccess dbAdd = new DataAccess();
       bool result = false;
 
-      result = dbAdd.AddNewPatient(txtPatient_ID.Text, txtPatientName.Text, cboBxPatientSex.ValueMember,
-        cboBxPatientSpecies.ValueMember, cboBxPatientBreed.ValueMember, txtClientIDBinding.Text);
+      result = dbAdd.AddNewPatient(txtPatient_ID.Text, txtPatientName.Text, 
+        cboBxPatientSex.SelectedValue.ToString(),
+        cboBxPatientSpecies.SelectedValue.ToString(), 
+        cboBxPatientBreed.SelectedValue.ToString(), txtClientIDBinding.Text);
       MessageBox.Show(result.ToString());
     }
 
     private void btnPatientFormCancel_MouseClick(object sender, MouseEventArgs e)
     {
       this.Close();
+    }
+
+    private void FilterBreedListBySpecies()
+    {
+      List<Breed> filteredBreeds = breedValues.Where(x => x.Species_ID == 
+      cboBxPatientSpecies.SelectedValue.ToString()).ToList();
+      cboBxPatientBreed.DataSource = filteredBreeds;
+      cboBxPatientBreed.DisplayMember = "Breed_Name";
+      cboBxPatientBreed.ValueMember = "Breed_ID";
+    }
+
+    private void cboBxPatientSpecies_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      FilterBreedListBySpecies();
     }
   }
 }

@@ -36,7 +36,6 @@ namespace ClientInformation
         SetClientValues(TxtClientID.Text);
       }
       return;
-      
     }
     
     private void SetClientValues(string clientid)
@@ -55,7 +54,6 @@ namespace ClientInformation
       TxtEmail.Text = client.EMail;
       txtMskPhoneNumber.Text = client.PhoneNumber;
 
-      /*DataAccess dbAccess = new DataAccess();*/
       patientList = dbAccess.GetPatientListDetailsByClientID(TxtClientID.Text);
       UpdateBinding();
     }
@@ -67,24 +65,9 @@ namespace ClientInformation
 
       result = dbUpdate.UpdateClientInformation(TxtClientID.Text, TxtBxFirstName.Text, TxtMiddleInitial.Text,
         TxtLastName.Text, TxtEmail.Text, TxtCity.Text, TxtState.Text, 
-        TxtPostalCode.Text, TxtStreetAddress.Text);
+        TxtPostalCode.Text, TxtStreetAddress.Text, txtMskPhoneNumber.Text);
       MessageBox.Show(result.ToString());
     }
-    /*private void TxtClientID_Leave(object sender, EventArgs e)
-    {
-      DataAccess dbAccess = new DataAccess();
-
-      Client client = dbAccess.GetClientByID(TxtClientID.Text);
-
-      TxtBxFirstName.Text = client.FirstName;
-      TxtMiddleInitial.Text = client.MiddleInitial;
-      TxtLastName.Text = client.LastName;
-      TxtStreetAddress.Text = client.StreetAddress;
-      TxtCity.Text = client.City;
-      TxtState.Text = client.State;
-      TxtPostalCode.Text = client.PostalCode;
-      TxtEmail.Text = client.EMail;
-    }*/
 
     private void btnAddClient_MouseClick(object sender, MouseEventArgs e)
     {
@@ -93,7 +76,7 @@ namespace ClientInformation
 
       result = dbAdd.AddNewClient(TxtClientID.Text, TxtBxFirstName.Text, TxtMiddleInitial.Text,
         TxtLastName.Text, TxtEmail.Text, TxtCity.Text, TxtState.Text,
-        TxtPostalCode.Text, TxtStreetAddress.Text);
+        TxtPostalCode.Text, TxtStreetAddress.Text, txtMskPhoneNumber.Text);
       MessageBox.Show(result.ToString());
     }
 

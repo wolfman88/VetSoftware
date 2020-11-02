@@ -68,11 +68,11 @@ namespace ClientInformation
       }
     }
     public bool UpdateClientInformation(string clientid, string firstname, string middleinitial, string lastname, string email,
-      string city, string state, string postalcode, string streetaddress)
+      string city, string state, string postalcode, string streetaddress, string phonenumber)
     {
       string sql = $"UPDATE Client SET FirstName = '{firstname}', MiddleInitial = '{middleinitial}', LastName = '{lastname}', " +
         $"EMail = '{email}', City = '{city}', State = '{state}', PostalCode = '{postalcode}'," +
-        $"StreetAddress = '{streetaddress}' WHERE ClientID = '{clientid}'";
+        $"StreetAddress = '{streetaddress}', PhoneNumber = '{phonenumber}' WHERE ClientID = '{clientid}'";
 
       using (var connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
       {
@@ -86,11 +86,11 @@ namespace ClientInformation
       }
     }
     public bool AddNewClient(string clientid, string firstname, string middleinitial, string lastname, string email,
-      string city, string state, string postalcode, string streetaddress)
+      string city, string state, string postalcode, string streetaddress, string phonenumber)
     {
       string sql = $"INSERT INTO Client (ClientID, FirstName, MiddleInitial, LastName, EMail, " +
         $"StreetAddress, City, State, PostalCode) VALUES ('{clientid}', '{firstname}', '{middleinitial}', '{lastname}'," +
-          $" '{email}', '{streetaddress}', '{city}', '{state}', '{postalcode}')";
+          $" '{email}', '{streetaddress}', '{city}', '{state}', '{postalcode}', '{phonenumber}')";
 
       using (var connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
       {

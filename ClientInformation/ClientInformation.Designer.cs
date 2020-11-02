@@ -77,7 +77,7 @@
       // 
       this.LblMiddleInitial.AutoSize = true;
       this.LblMiddleInitial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.LblMiddleInitial.Location = new System.Drawing.Point(337, 38);
+      this.LblMiddleInitial.Location = new System.Drawing.Point(341, 38);
       this.LblMiddleInitial.Name = "LblMiddleInitial";
       this.LblMiddleInitial.Size = new System.Drawing.Size(22, 17);
       this.LblMiddleInitial.TabIndex = 2;
@@ -87,7 +87,7 @@
       // 
       this.LblLastName.AutoSize = true;
       this.LblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.LblLastName.Location = new System.Drawing.Point(365, 38);
+      this.LblLastName.Location = new System.Drawing.Point(371, 38);
       this.LblLastName.Name = "LblLastName";
       this.LblLastName.Size = new System.Drawing.Size(35, 17);
       this.LblLastName.TabIndex = 3;
@@ -96,7 +96,7 @@
       // TxtMiddleInitial
       // 
       this.TxtMiddleInitial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.TxtMiddleInitial.Location = new System.Drawing.Point(337, 58);
+      this.TxtMiddleInitial.Location = new System.Drawing.Point(341, 58);
       this.TxtMiddleInitial.Name = "TxtMiddleInitial";
       this.TxtMiddleInitial.Size = new System.Drawing.Size(22, 23);
       this.TxtMiddleInitial.TabIndex = 3;
@@ -104,7 +104,7 @@
       // TxtLastName
       // 
       this.TxtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.TxtLastName.Location = new System.Drawing.Point(365, 58);
+      this.TxtLastName.Location = new System.Drawing.Point(369, 58);
       this.TxtLastName.Name = "TxtLastName";
       this.TxtLastName.Size = new System.Drawing.Size(261, 23);
       this.TxtLastName.TabIndex = 4;
@@ -309,6 +309,7 @@
       this.txtMskPhoneNumber.Size = new System.Drawing.Size(113, 23);
       this.txtMskPhoneNumber.TabIndex = 10;
       this.txtMskPhoneNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+      this.txtMskPhoneNumber.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
       // 
       // ClientInformation
       // 
