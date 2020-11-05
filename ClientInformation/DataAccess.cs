@@ -26,7 +26,7 @@ namespace ClientInformation
         return output;
       }
     }
-
+    
     public Client GetClientByID(string id)
     {
       using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ClientDB")))
